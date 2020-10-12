@@ -1,0 +1,12 @@
+
+[user]
+        email = someemail@gmail.com
+
+[alias]
+        co = checkout
+        ci = commit
+        br = branch
+        st = status
+        type = cat-file -t
+        dump = cat-file -p
+        hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
