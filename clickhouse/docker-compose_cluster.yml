@@ -1,0 +1,84 @@
+version: "3"
+services:
+  sh1r1:
+    image: "yandex/clickhouse-server"
+    volumes:
+      - ./clickhouse_data/sh1r1:/var/lib/clickhouse
+      - ./output:/output
+      - ./scripts:/scripts
+      - ./clickhouse_configs/users.d:/etc/clickhouse-server/users.d
+      - ./clickhouse_configs/config.d:/etc/clickhouse-server/config.d
+    container_name: "sh1r1-clickhouse-server"
+    ports:
+        - 8123:8123
+    ulimits: 
+      nofile:
+        soft: 262144
+        hard: 262144     
+  sh1r2:
+    image: "yandex/clickhouse-server"
+    volumes:
+      - ./clickhouse_data/sh1r2:/var/lib/clickhouse
+      - ./output:/output
+      - ./scripts:/scripts
+      - ./clickhouse_configs/users.d:/etc/clickhouse-server/users.d
+      - ./clickhouse_configs/config.d:/etc/clickhouse-server/config.d
+    container_name: "sh1r2-clickhouse-server"
+    ulimits: 
+      nofile:
+        soft: 262144
+        hard: 262144           
+
+
+  sh2r1:
+    image: "yandex/clickhouse-server"
+    volumes:
+      - ./clickhouse_data/sh2r1:/var/lib/clickhouse
+      - ./output:/output
+      - ./scripts:/scripts
+      - ./clickhouse_configs/users.d:/etc/clickhouse-server/users.d
+      - ./clickhouse_configs/config.d:/etc/clickhouse-server/config.d
+    container_name: "sh2r1-clickhouse-server"
+    ulimits: 
+      nofile:
+        soft: 262144
+        hard: 262144   
+  sh2r2:
+    image: "yandex/clickhouse-server"
+    volumes:
+      - ./clickhouse_data/sh2r2:/var/lib/clickhouse
+      - ./output:/output
+      - ./scripts:/scripts
+      - ./clickhouse_configs/users.d:/etc/clickhouse-server/users.d
+      - ./clickhouse_configs/config.d:/etc/clickhouse-server/config.d
+    container_name: "sh2r2-clickhouse-server"
+    ulimits: 
+      nofile:
+        soft: 262144
+        hard: 262144   
+  sh3r1:
+    image: "yandex/clickhouse-server"
+    volumes:
+      - ./clickhouse_data/sh3r1:/var/lib/clickhouse
+      - ./output:/output
+      - ./scripts:/scripts
+      - ./clickhouse_configs/users.d:/etc/clickhouse-server/users.d
+      - ./clickhouse_configs/config.d:/etc/clickhouse-server/config.d
+    container_name: "sh3r1-clickhouse-server"
+    ulimits: 
+      nofile:
+        soft: 262144
+        hard: 262144   
+  sh3r2:
+    image: "yandex/clickhouse-server"
+    volumes:
+      - ./clickhouse_data/sh3r2:/var/lib/clickhouse
+      - ./output:/output
+      - ./scripts:/scripts
+      - ./clickhouse_configs/users.d:/etc/clickhouse-server/users.d
+      - ./clickhouse_configs/config.d:/etc/clickhouse-server/config.d
+    container_name: "sh3r2-clickhouse-server"
+    ulimits: 
+      nofile:
+        soft: 262144
+        hard: 262144                 

@@ -1,0 +1,16 @@
+version: "2"
+services:
+    sh1r1:
+      image: "yandex/clickhouse-server"
+      volumes:
+        - ./clickhouse_data/sh1r1:/var/lib/clickhouse
+    #     - ./output:/output
+        - ./clickhouse_configs/users.d:/etc/clickhouse-server/users.d
+        - ./clickhouse_configs/config.d:/etc/clickhouse-server/config.d
+      container_name: "sh1r1-clickhouse-server"
+      ports:
+          - 8123:8123
+      ulimits: 
+        nofile:
+          soft: 262144
+          hard: 262144   
